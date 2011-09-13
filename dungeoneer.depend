@@ -1,0 +1,56 @@
+# depslib dependency file v1.0
+1315678041 source:/home/unasahi/Source/dungeoneer/main.cpp
+	"main.h"
+
+1315593318 /home/unasahi/Source/dungeoneer/main.h
+	"includes.h"
+	"app.h"
+	"file.h"
+	"map.h"
+
+1315593157 /home/unasahi/Source/dungeoneer/includes.h
+	<iostream>
+	<string>
+	<vector>
+	<fstream>
+	<cstring>
+	<cstdlib>
+	<cstdio>
+	<SFML/Graphics.hpp>
+
+1315678163 /home/unasahi/Source/dungeoneer/app.h
+	"includes.h"
+	"file.h"
+
+1315680086 source:/home/unasahi/Source/dungeoneer/app.cpp
+	"app.h"
+	"map.h"
+
+1315594112 source:/home/unasahi/Source/dungeoneer/file.cpp
+	"file.h"
+
+1315600122 /home/unasahi/Source/dungeoneer/file.h
+	"includes.h"
+
+1315688542 source:/home/unasahi/Source/dungeoneer/map.cpp
+	"map.h"
+
+1315688601 /home/unasahi/Source/dungeoneer/map.h
+	"includes.h"
+	"file.h"
+	"app.h"
+
+1314991840 source:/home/unasahi/Source/dungeoneer/image.cpp
+	"image.h"
+
+1314991840 /home/unasahi/Source/dungeoneer/image.h
+	"includes.h"
+	"app.h"
+
+1315478848 source:/home/unasahi/Source/dungeoneer/animation.cpp
+	"animation.h"
+
+1315593879 /home/unasahi/Source/dungeoneer/animation.h
+	"includes.h"
+	"app.h"
+

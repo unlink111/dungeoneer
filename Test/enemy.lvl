@@ -1,0 +1,15 @@
+enemy
+spawn
+5
+5
+type
+testen
+end
+
+enemy
+spawn
+1
+2
+type
+testen2
+end
