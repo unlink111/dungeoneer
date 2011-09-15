@@ -1,8 +1,24 @@
+/*
+    This file is part of dungeoneer.
+
+    dungeoneer is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    dungeoneer is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
 #include"map.h"
 
 LoadMap::LoadMap(char *mapName,App *a)
 {
-    char file[max];
     strncpy(file,mapName,max);
     strncat(file,"/for.lvl",max);
     mapFor=this->load(file);
@@ -47,23 +63,23 @@ void LoadMap::convMap(List<string> *text,bool ignoreSpace,bool hit,bool damage)
         {
             if(buf[j]=='#')
             {
-                cerr<<"ignoring comment in list at "<<text<<endl;
+                cerr<<mes<<"ignoring comment in list at "<<text<<endl;
                 break;
             }
             else if(((buf[j]==0) && (ignoreSpace)) && !buf.empty())
             {
-                cerr<<"ignoring space in list at "<<text<<endl;
+                cerr<<mes<<"ignoring space in list at "<<text<<endl;
                 continue;
             }
             else if(buf.empty())
             {
-                cerr<<"ignoring blank line in list at "<<text<<endl;
+                cerr<<mes<<"ignoring blank line in list at "<<text<<endl;
                 notAdd=true;
                 break;
             }
             else
             {
-                //adds the cha to buf2
+                //adds the char to buf2
                 buf2=buf2+buf[j];
             }
         }
@@ -85,12 +101,12 @@ void LoadMap::convMap(List<string> *text,bool ignoreSpace,bool hit,bool damage)
         //enemy convertion
         if(bufLst.get(i)=="enemy")
         {
-            cerr<<"adding enemy to enemyList"<<endl;
+            cerr<<mes<<"adding enemy to enemyList"<<endl;
             for(int j=i;j<bufLst.getSize();j++)
             {
                 if(bufLst.get(j)=="spawn")
                 {
-                    cerr<<"setting spawn in enemyCord at";
+                    cerr<<mes<<"setting spawn in enemyCord at ";
                     j++;
                     enemyCord.add(strToInt(bufLst.get(j)));
                     cerr<<bufLst.get(j)<<"/";
@@ -101,16 +117,45 @@ void LoadMap::convMap(List<string> *text,bool ignoreSpace,bool hit,bool damage)
                 }
                 else if(bufLst.get(j)=="type")
                 {
-                    cerr<<"setting enemy type in enemyType "<<bufLst.get(++j)<<endl;
+                    cerr<<mes<<"setting enemy type in enemyType "<<bufLst.get(++j)<<endl;
                     enemyType.add(bufLst.get(i));
                     continue;
                 }
                 else if(bufLst.get(j)=="end")
                 {
-                    cerr<<"ending editing enemy"<<endl;
+                    cerr<<mes<<"ending editing enemy"<<endl;
+                    i=j;
                     break;
                 }
             }
+        }
+        else if(bufLst.get(i)=="exit")
+        {
+
+        }
+        else if(bufLst.get(i)=="theme")
+        {
+
+        }
+        else if(bufLst.get(i)=="player")
+        {
+
+        }
+        else if(bufLst.get(i)=="obj")
+        {
+            cerr<<crit<<"obj"<<endl;
+        }
+        else if(bufLst.get(i)=="forgr")
+        {
+            cerr<<crit<<"for"<<endl;
+        }
+        else if(bufLst.get(i)=="backgr")
+        {
+
+        }
+        else
+        {
+            cerr<<error<<"unknow map command: "<<bufLst.get(i)<<" in map "<<this->file<<endl;
         }
     }
     cout<<endl;

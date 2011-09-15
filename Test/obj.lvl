@@ -23,4 +23,16 @@ direction
 down
 end
 
+obj
+name
+chest
+type
+chest
+at
+1
+2
+contains
+testitem
+end
+
 

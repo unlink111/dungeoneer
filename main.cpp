@@ -1,6 +1,7 @@
 /*
 <dungeoneer a multiplayer action role playing game> Version 0.0.1
 (C) 2011 Lukas Krickl (Programming,Level Design,Sound), Franz Sperl (Level Design,Story,Sound)
+
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
