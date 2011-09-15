@@ -1,3 +1,5 @@
 dungeoneer a free and open Source rpg by Lukas Krickl and Franz Sperl
 *This project is in a very early stage of development and may not be used for playing at all*
 The first playable version will be release in November(tm)
+
+New: Finished the exit code for now tomorrow I'm going to do the map printing so that we will see a playable version next week. In this case playable menas that you may be able to go trough badly designed worlds
