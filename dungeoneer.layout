@@ -2,36 +2,36 @@
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
 	<File name="animation.cpp" open="1" top="0" tabpos="11">
-		<Cursor position="861" topLine="0" />
+		<Cursor position="757" topLine="16" />
 	</File>
 	<File name="animation.h" open="1" top="0" tabpos="10">
-		<Cursor position="685" topLine="0" />
+		<Cursor position="685" topLine="18" />
 	</File>
 	<File name="app.cpp" open="1" top="0" tabpos="5">
-		<Cursor position="685" topLine="0" />
+		<Cursor position="685" topLine="27" />
 	</File>
 	<File name="app.h" open="1" top="0" tabpos="4">
-		<Cursor position="685" topLine="0" />
+		<Cursor position="800" topLine="7" />
 	</File>
 	<File name="file.cpp" open="1" top="0" tabpos="6">
-		<Cursor position="685" topLine="0" />
+		<Cursor position="685" topLine="63" />
 	</File>
 	<File name="file.h" open="1" top="0" tabpos="7">
-		<Cursor position="685" topLine="0" />
+		<Cursor position="685" topLine="6" />
 	</File>
 	<File name="includes.h" open="1" top="0" tabpos="3">
-		<Cursor position="982" topLine="45" />
+		<Cursor position="982" topLine="57" />
 	</File>
 	<File name="main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="1034" topLine="16" />
+		<Cursor position="2051" topLine="27" />
 	</File>
 	<File name="main.h" open="1" top="0" tabpos="2">
 		<Cursor position="896" topLine="3" />
 	</File>
 	<File name="map.cpp" open="1" top="1" tabpos="9">
-		<Cursor position="1947" topLine="213" />
+		<Cursor position="869" topLine="191" />
 	</File>
 	<File name="map.h" open="1" top="0" tabpos="8">
-		<Cursor position="1744" topLine="31" />
+		<Cursor position="810" topLine="38" />
 	</File>
 </CodeBlocks_layout_file>

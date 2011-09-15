@@ -21,6 +21,7 @@
 #include"includes.h"
 #include"file.h"
 #include"app.h"
+#include"animation.h"
 
 class LoadMap:public Load
 {
@@ -56,6 +57,12 @@ class LoadMap:public Load
     List<int> objectCord;
     string theme;
     char file[max];
+
+    List<Anim> imgListFor;
+    List<Anim> imgListBack;
+    List<Anim> imgListObj;
+    List<Anim> imgListPlayer;
+    List<Anim> imgListEnemy;
 };
 
 

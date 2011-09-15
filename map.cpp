@@ -184,6 +184,7 @@ void LoadMap::convMap(List<string> *text,bool ignoreSpace,bool hit,bool damage)
         }
         else if(bufLst.get(i)=="player")
         {
+            //plazeholder for player spawn and name
             cerr<<mes<<"Starting editing player"<<endl;
             for(int j=i;i<bufLst.getSize();j++)
             {
@@ -197,6 +198,7 @@ void LoadMap::convMap(List<string> *text,bool ignoreSpace,bool hit,bool damage)
         }
         else if(bufLst.get(i)=="obj")
         {
+            //plazeholder for object spawning
             cerr<<mes<<"Starting editing objects"<<endl;
             for(int j=i;i<bufLst.getSize();j++)
             {
@@ -208,7 +210,7 @@ void LoadMap::convMap(List<string> *text,bool ignoreSpace,bool hit,bool damage)
                 }
             }
         }
-        else if(bufLst.get(i)=="forgr")
+        else if(bufLst.get(i)=="forgr ")
         {
             cerr<<crit<<"for"<<endl;
         }

@@ -32,13 +32,14 @@
 1316094617 /home/unasahi/Source/dungeoneer/file.h
 	"includes.h"
 
-1316111803 source:/home/unasahi/Source/dungeoneer/map.cpp
+1316117601 source:/home/unasahi/Source/dungeoneer/map.cpp
 	"map.h"
 
-1316111662 /home/unasahi/Source/dungeoneer/map.h
+1316117483 /home/unasahi/Source/dungeoneer/map.h
 	"includes.h"
 	"file.h"
 	"app.h"
+	"animation.h"
 
 1314991840 source:/home/unasahi/Source/dungeoneer/image.cpp
 	"image.h"
