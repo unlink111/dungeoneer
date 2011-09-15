@@ -43,8 +43,6 @@ LoadMap::LoadMap(char *mapName,App *a)
     strncat(file,"/exit.lvl",max);
     mapExit=this->load(file);
     this->convMap(mapExit);
-
-    theme=NULL;
 }
 
 void LoadMap::convMap(List<string> *text,bool ignoreSpace,bool hit,bool damage)
@@ -63,17 +61,17 @@ void LoadMap::convMap(List<string> *text,bool ignoreSpace,bool hit,bool damage)
         {
             if(buf[j]=='#')
             {
-                cerr<<mes<<"ignoring comment in list at "<<text<<endl;
+                //cerr<<mes<<"ignoring comment in list at "<<text<<endl;
                 break;
             }
             else if(((buf[j]==0) && (ignoreSpace)) && !buf.empty())
             {
-                cerr<<mes<<"ignoring space in list at "<<text<<endl;
+                //cerr<<mes<<"ignoring space in list at "<<text<<endl;
                 continue;
             }
             else if(buf.empty())
             {
-                cerr<<mes<<"ignoring blank line in list at "<<text<<endl;
+                //cerr<<mes<<"ignoring blank line in list at "<<text<<endl;
                 notAdd=true;
                 break;
             }
@@ -101,6 +99,7 @@ void LoadMap::convMap(List<string> *text,bool ignoreSpace,bool hit,bool damage)
         //enemy convertion
         if(bufLst.get(i)=="enemy")
         {
+            bool enname=false;
             cerr<<mes<<"adding enemy to enemyList"<<endl;
             for(int j=i;j<bufLst.getSize();j++)
             {
@@ -121,8 +120,17 @@ void LoadMap::convMap(List<string> *text,bool ignoreSpace,bool hit,bool damage)
                     enemyType.add(bufLst.get(i));
                     continue;
                 }
+                else if(bufLst.get(j)=="name")
+                {
+                    cerr<<mes<<"Set enemy name to "<<bufLst.get(++j)<<endl;
+                    //needs to be set when the enemy/npc class is written
+                    enname=true;
+                }
                 else if(bufLst.get(j)=="end")
                 {
+                    if(!enname)
+                        cerr<<warn<<"No enemy name specifide using type as name"<<endl;
+                        //needs to be set wehn the enemy/npc class is written
                     cerr<<mes<<"ending editing enemy"<<endl;
                     i=j;
                     break;
@@ -131,19 +139,74 @@ void LoadMap::convMap(List<string> *text,bool ignoreSpace,bool hit,bool damage)
         }
         else if(bufLst.get(i)=="exit")
         {
-
+            cerr<<mes<<"beginning to set exit"<<endl;
+            for(int j=i;j<bufLst.getSize();j++)
+            {
+                if(bufLst.get(j)=="tomap")
+                {
+                    cerr<<mes<<"setting exit to map "<<bufLst.get(++j)<<endl;
+                    exitType.add(bufLst.get(j));
+                    continue;
+                }
+                else if(bufLst.get(j)=="from")
+                {
+                    cerr<<mes<<"setting exit cordinates from "<<bufLst.get(++j);
+                    exitCord.add(strToInt(bufLst.get(j)));
+                    cerr<<" to "<<bufLst.get(++j)<<endl;
+                    exitCord.add(strToInt(bufLst.get(j)));
+                    continue;
+                }
+                else if(bufLst.get(j)=="to")
+                {
+                    cerr<<mes<<"setting exit cordinates to "<<bufLst.get(++j);
+                    exitCord.add(strToInt(bufLst.get(j)));
+                    cerr<<" to "<<bufLst.get(++j)<<endl;
+                    exitCord.add(strToInt(bufLst.get(j)));
+                    continue;
+                }
+                else if(bufLst.get(j)=="end")
+                {
+                    cerr<<mes<<"ending mapexit editing"<<endl;
+                    i=j;
+                    break;
+                }
+            }
         }
         else if(bufLst.get(i)=="theme")
         {
-
+            for(int j=i;j<bufLst.getSize();j++)
+            {
+                cerr<<mes<<"Setting theme to "<<bufLst.get(++j)<<endl;
+                this->theme=bufLst.get(j++);
+                i=j;
+                break;
+            }
         }
         else if(bufLst.get(i)=="player")
         {
-
+            cerr<<mes<<"Starting editing player"<<endl;
+            for(int j=i;i<bufLst.getSize();j++)
+            {
+                if(bufLst.get(j)=="end")
+                {
+                    cerr<<mes<<"Ending editing player"<<endl;
+                    i=j;
+                    break;
+                }
+            }
         }
         else if(bufLst.get(i)=="obj")
         {
-            cerr<<crit<<"obj"<<endl;
+            cerr<<mes<<"Starting editing objects"<<endl;
+            for(int j=i;i<bufLst.getSize();j++)
+            {
+                if(bufLst.get(j)=="end")
+                {
+                    cerr<<mes<<"Ending editing objects"<<endl;
+                    i=j;
+                    break;
+                }
+            }
         }
         else if(bufLst.get(i)=="forgr")
         {

@@ -34,7 +34,6 @@ class LoadMap:public Load
         delete mapObj;
         delete mapEnemy;
         delete mapExit;
-        delete theme;
     }
     void printMap();//prints map
     void convMap(List<string> *text,bool ignoreSpace=true,bool hit=false,bool damage=false);//prepares loadet information for printing
@@ -55,7 +54,7 @@ class LoadMap:public Load
     List<int> enemyCord;
     List<string> objectType;
     List<int> objectCord;
-    char *theme;
+    string theme;
     char file[max];
 };
 

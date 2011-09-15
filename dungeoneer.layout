@@ -20,7 +20,7 @@
 		<Cursor position="685" topLine="0" />
 	</File>
 	<File name="includes.h" open="1" top="0" tabpos="3">
-		<Cursor position="982" topLine="9" />
+		<Cursor position="982" topLine="45" />
 	</File>
 	<File name="main.cpp" open="1" top="0" tabpos="1">
 		<Cursor position="1034" topLine="16" />
@@ -29,9 +29,9 @@
 		<Cursor position="896" topLine="3" />
 	</File>
 	<File name="map.cpp" open="1" top="1" tabpos="9">
-		<Cursor position="4380" topLine="136" />
+		<Cursor position="1947" topLine="213" />
 	</File>
 	<File name="map.h" open="1" top="0" tabpos="8">
-		<Cursor position="1771" topLine="31" />
+		<Cursor position="1744" topLine="31" />
 	</File>
 </CodeBlocks_layout_file>
