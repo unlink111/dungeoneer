@@ -15,6 +15,8 @@
     along with dungeoneer.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+//todo enemy object and npc class will be child classes of map and will load an print theyr seperately for now they will be loaded here
+
 #include"map.h"
 
 LoadMap::LoadMap(char *mapName,App *a)
@@ -22,12 +24,12 @@ LoadMap::LoadMap(char *mapName,App *a)
     strncpy(file,mapName,max);
     strncat(file,"/for.lvl",max);
     mapFor=this->load(file);
-    this->convMap(mapFor,false);
+    this->convMap(mapFor);
 
     strncpy(file,mapName,max);
     strncat(file,"/back.lvl",max);
     mapBack=this->load(file);
-    this->convMap(mapBack,false);
+    this->convMap(mapBack);
 
     strncpy(file,mapName,max);
     strncat(file,"/obj.lvl",max);
@@ -64,7 +66,7 @@ void LoadMap::convMap(List<string> *text,bool ignoreSpace,bool hit,bool damage)
                 //cerr<<mes<<"ignoring comment in list at "<<text<<endl;
                 break;
             }
-            else if(((buf[j]==0) && (ignoreSpace)) && !buf.empty())
+            else if((buf[j]==0) && ignoreSpace && !buf.empty())
             {
                 //cerr<<mes<<"ignoring space in list at "<<text<<endl;
                 continue;
@@ -210,13 +212,31 @@ void LoadMap::convMap(List<string> *text,bool ignoreSpace,bool hit,bool damage)
                 }
             }
         }
-        else if(bufLst.get(i)=="forgr ")
+        else if(bufLst.get(i)=="forgr")
         {
-            cerr<<crit<<"for"<<endl;
+            cerr<<mes<<"Starting editing forground"<<endl;
+            for(int j=i;i<bufLst.getSize();j++)
+            {
+                if(bufLst.get(j)=="end")
+                {
+                    cerr<<mes<<"Ending editing forground"<<endl;
+                    i=j;
+                    break;
+                }
+            }
         }
         else if(bufLst.get(i)=="backgr")
         {
-
+            cerr<<mes<<"Starting editing background"<<endl;
+            for(int j=i;i<bufLst.getSize();j++)
+            {
+                if(bufLst.get(j)=="end")
+                {
+                    cerr<<mes<<"Ending editing background"<<endl;
+                    i=j;
+                    break;
+                }
+            }
         }
         else
         {
