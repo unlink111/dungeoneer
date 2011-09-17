@@ -17,11 +17,11 @@
 
 #include"animation.h"
 
-void Anim::loadImage(char *file)
+void Anim::loadImage()
 {
-    if(!image.LoadFromFile(file))
+    if(!image.LoadFromFile(path))
     {
-        cerr<<file<<" no such file or directorry\n";
+        cerr<<path<<" no such file or directorry\n";
         exit(-1);
     }
 

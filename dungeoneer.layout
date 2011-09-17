@@ -2,10 +2,10 @@
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
 	<File name="animation.cpp" open="1" top="0" tabpos="11">
-		<Cursor position="782" topLine="16" />
+		<Cursor position="1021" topLine="16" />
 	</File>
 	<File name="animation.h" open="1" top="0" tabpos="10">
-		<Cursor position="640" topLine="0" />
+		<Cursor position="913" topLine="18" />
 	</File>
 	<File name="app.cpp" open="1" top="0" tabpos="5">
 		<Cursor position="640" topLine="0" />
@@ -20,7 +20,7 @@
 		<Cursor position="640" topLine="6" />
 	</File>
 	<File name="includes.h" open="1" top="0" tabpos="3">
-		<Cursor position="640" topLine="3" />
+		<Cursor position="1215" topLine="38" />
 	</File>
 	<File name="main.cpp" open="1" top="0" tabpos="1">
 		<Cursor position="2051" topLine="27" />
@@ -29,9 +29,9 @@
 		<Cursor position="640" topLine="3" />
 	</File>
 	<File name="map.cpp" open="1" top="1" tabpos="9">
-		<Cursor position="7771" topLine="207" />
+		<Cursor position="8105" topLine="233" />
 	</File>
 	<File name="map.h" open="1" top="0" tabpos="8">
-		<Cursor position="640" topLine="8" />
+		<Cursor position="1765" topLine="38" />
 	</File>
 </CodeBlocks_layout_file>

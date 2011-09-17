@@ -24,12 +24,13 @@
 class Anim
 {
     public:
-    Anim()
+    Anim(char *file)
     {
+        path=file;
         w=0;
         h=0;
     }
-    void loadImage(char *file);
+    void loadImage();
     void printImage(App a,int x,int y,int w1=0,int h1=0,int w2=0,int h2=0);
     float getH()
     {
@@ -39,11 +40,16 @@ class Anim
     {
         return w;
     }
+    char* getPath()
+    {
+        return path;
+    }
     protected:
     sf::Image image;
     sf::Sprite sprite;
     float h;
     float w;
+    char *path;
 };
 
 #endif // ANIMATION_H_INCLUDED

@@ -228,13 +228,39 @@ void LoadMap::convMap(List<string> *text,bool ignoreSpace,bool hit,bool damage)
         else if(bufLst.get(i)=="backgr")
         {
             cerr<<mes<<"Starting editing background"<<endl;
+            //loops trough all lines
             for(int j=i;i<bufLst.getSize();j++)
             {
+                string bufBck=bufLst.get(i);
                 if(bufLst.get(j)=="end")
                 {
                     cerr<<mes<<"Ending editing background"<<endl;
                     i=j;
                     break;
+                }
+                else
+                {
+                    bool loaded=false;
+                    char bckPath[max];
+                    //loops trough all chars in the line
+                    for(unsigned int j=0;j<bufBck.size();j++)
+                    {
+                        //loops trough list to check if the image was already loaded to avoid loading the image into the memmory agian
+                        strncpy(bckPath,theme.c_str(),max);
+                        for(int x=0;x<imgListBack.getSize();x++)
+                        {
+                            if(!strncmp(imgListBack.get(x).getPath(),bckPath,max))
+                                loaded=true;
+                            else
+                                loaded=false;
+                        }
+                        if(!loaded)
+                        {
+                            cerr<<mes<<"loading image at "<<bckPath<<endl;
+                            Anim a(bckPath);
+                            imgListBack.add(a);
+                        }
+                    }
                 }
             }
         }
