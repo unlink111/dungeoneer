@@ -22,6 +22,11 @@
 LoadMap::LoadMap(char *mapName,App *a)
 {
     strncpy(file,mapName,max);
+    strncat(file,"/obj.lvl",max);
+    mapObj=this->load(file);
+    this->convMap(mapObj);
+
+    strncpy(file,mapName,max);
     strncat(file,"/for.lvl",max);
     mapFor=this->load(file);
     this->convMap(mapFor);
@@ -30,11 +35,6 @@ LoadMap::LoadMap(char *mapName,App *a)
     strncat(file,"/back.lvl",max);
     mapBack=this->load(file);
     this->convMap(mapBack);
-
-    strncpy(file,mapName,max);
-    strncat(file,"/obj.lvl",max);
-    mapObj=this->load(file);
-    this->convMap(mapObj);
 
     strncpy(file,mapName,max);
     strncat(file,"/enemy.lvl",max);
@@ -231,7 +231,7 @@ void LoadMap::convMap(List<string> *text,bool ignoreSpace,bool hit,bool damage)
             //loops trough all lines
             for(int j=i;i<bufLst.getSize();j++)
             {
-                string bufBck=bufLst.get(i);
+                string bufBck=bufLst.get(j);
                 if(bufLst.get(j)=="end")
                 {
                     cerr<<mes<<"Ending editing background"<<endl;
