@@ -119,7 +119,7 @@ void LoadMap::convMap(List<string> *text,bool ignoreSpace,bool hit,bool damage)
                 else if(bufLst.get(j)=="type")
                 {
                     cerr<<mes<<"setting enemy type in enemyType "<<bufLst.get(++j)<<endl;
-                    enemyType.add(bufLst.get(i));
+                    enemyType.add(bufLst.get(j));
                     continue;
                 }
                 else if(bufLst.get(j)=="name")
@@ -133,10 +133,12 @@ void LoadMap::convMap(List<string> *text,bool ignoreSpace,bool hit,bool damage)
                     if(!enname)
                         cerr<<warn<<"No enemy name specifide using type as name"<<endl;
                         //needs to be set wehn the enemy/npc class is written
-                    cerr<<mes<<"ending editing enemy"<<endl;
+                    cerr<<mes<<"ending to edit enemy"<<endl;
                     i=j;
                     break;
                 }
+                else
+                    cerr<<error<<"unknow map command: "<<bufLst.get(i)<<" in map "<<this->file<<endl;
             }
         }
         else if(bufLst.get(i)=="exit")
@@ -168,10 +170,12 @@ void LoadMap::convMap(List<string> *text,bool ignoreSpace,bool hit,bool damage)
                 }
                 else if(bufLst.get(j)=="end")
                 {
-                    cerr<<mes<<"ending mapexit editing"<<endl;
+                    cerr<<mes<<"ending to edit mapexit"<<endl;
                     i=j;
                     break;
                 }
+                else
+                    cerr<<error<<"unknow map command: "<<bufLst.get(i)<<" in map "<<this->file<<endl;
             }
         }
         else if(bufLst.get(i)=="theme")
@@ -187,39 +191,43 @@ void LoadMap::convMap(List<string> *text,bool ignoreSpace,bool hit,bool damage)
         else if(bufLst.get(i)=="player")
         {
             //plazeholder for player spawn and name
-            cerr<<mes<<"Starting editing player"<<endl;
+            cerr<<mes<<"Starting to edit player"<<endl;
             for(int j=i;i<bufLst.getSize();j++)
             {
                 if(bufLst.get(j)=="end")
                 {
-                    cerr<<mes<<"Ending editing player"<<endl;
+                    cerr<<mes<<"Ending to edit player"<<endl;
                     i=j;
                     break;
                 }
+                else
+                    cerr<<error<<"unknow map command: "<<bufLst.get(i)<<" in map "<<this->file<<endl;
             }
         }
         else if(bufLst.get(i)=="obj")
         {
             //plazeholder for object spawning
-            cerr<<mes<<"Starting editing objects"<<endl;
+            cerr<<mes<<"Starting to edit objects"<<endl;
             for(int j=i;i<bufLst.getSize();j++)
             {
                 if(bufLst.get(j)=="end")
                 {
-                    cerr<<mes<<"Ending editing objects"<<endl;
+                    cerr<<mes<<"Ending to edit objects"<<endl;
                     i=j;
                     break;
                 }
+                else
+                    cerr<<error<<"unknow map command: "<<bufLst.get(i)<<" in map "<<this->file<<endl;
             }
         }
         else if(bufLst.get(i)=="forgr")
         {
-            cerr<<mes<<"Starting editing forground"<<endl;
+            cerr<<mes<<"Starting to edit forground"<<endl;
             for(int j=i;i<bufLst.getSize();j++)
             {
                 if(bufLst.get(j)=="end")
                 {
-                    cerr<<mes<<"Ending editing forground"<<endl;
+                    cerr<<mes<<"Ending to edit forground"<<endl;
                     i=j;
                     break;
                 }
@@ -227,14 +235,14 @@ void LoadMap::convMap(List<string> *text,bool ignoreSpace,bool hit,bool damage)
         }
         else if(bufLst.get(i)=="backgr")
         {
-            cerr<<mes<<"Starting editing background"<<endl;
+            cerr<<mes<<"Starting to edit background"<<endl;
             //loops trough all lines
             for(int j=i;i<bufLst.getSize();j++)
             {
                 string bufBck=bufLst.get(j);
                 if(bufLst.get(j)=="end")
                 {
-                    cerr<<mes<<"Ending editing background"<<endl;
+                    cerr<<mes<<"Ending to edit background"<<endl;
                     i=j;
                     break;
                 }

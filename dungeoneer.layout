@@ -22,16 +22,16 @@
 	<File name="includes.h" open="1" top="0" tabpos="3">
 		<Cursor position="1215" topLine="38" />
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="2051" topLine="27" />
+	<File name="main.cpp" open="1" top="1" tabpos="1">
+		<Cursor position="584" topLine="0" />
 	</File>
 	<File name="main.h" open="1" top="0" tabpos="2">
 		<Cursor position="640" topLine="3" />
 	</File>
-	<File name="map.cpp" open="1" top="1" tabpos="9">
-		<Cursor position="8105" topLine="233" />
+	<File name="map.cpp" open="1" top="0" tabpos="9">
+		<Cursor position="9671" topLine="269" />
 	</File>
 	<File name="map.h" open="1" top="0" tabpos="8">
-		<Cursor position="1765" topLine="38" />
+		<Cursor position="1285" topLine="11" />
 	</File>
 </CodeBlocks_layout_file>
