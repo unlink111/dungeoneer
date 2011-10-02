@@ -22,6 +22,7 @@ void Anim::loadImage()
     if(!image.LoadFromFile(path))
     {
         cerr<<path<<" no such file or directorry\n";
+        getchar();
         exit(-1);
     }
 
@@ -31,7 +32,7 @@ void Anim::loadImage()
 }
 
 
-void Anim::printImage(App a,int x,int y,int w1,int h1,int w2,int h2)
+void Anim::printImage(App *a,int x,int y,int w1,int h1,int w2,int h2)
 {
     if(w2==0)
     {
@@ -43,5 +44,5 @@ void Anim::printImage(App a,int x,int y,int w1,int h1,int w2,int h2)
     }
     sprite.SetPosition(x,y);
     sprite.SetSubRect(sf::IntRect(w1,h1,w2,h2));
-    a.win.Draw(sprite);
+    a->win.Draw(sprite);
 }

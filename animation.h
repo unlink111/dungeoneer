@@ -31,7 +31,7 @@ class Anim
         h=0;
     }
     void loadImage();
-    void printImage(App a,int x,int y,int w1=0,int h1=0,int w2=0,int h2=0);
+    void printImage(App *a,int x,int y,int w1=0,int h1=0,int w2=0,int h2=0);
     float getH()
     {
         return h;

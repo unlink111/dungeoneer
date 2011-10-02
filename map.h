@@ -63,6 +63,8 @@ class LoadMap:public Load
     List<Anim> imgListObj;
     List<Anim> imgListPlayer;
     List<Anim> imgListEnemy;
+
+    App *app;
 };
 
 

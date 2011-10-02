@@ -45,6 +45,8 @@ LoadMap::LoadMap(char *mapName,App *a)
     strncat(file,"/exit.lvl",max);
     mapExit=this->load(file);
     this->convMap(mapExit);
+
+    app=a;
 }
 
 void LoadMap::convMap(List<string> *text,bool ignoreSpace,bool hit,bool damage)
@@ -248,6 +250,7 @@ void LoadMap::convMap(List<string> *text,bool ignoreSpace,bool hit,bool damage)
                 }
                 else
                 {
+                    bufBck=bufLst.get(j+1);
                     bool loaded=false;
                     char bckPath[max];
                     //loops trough all chars in the line
@@ -264,9 +267,15 @@ void LoadMap::convMap(List<string> *text,bool ignoreSpace,bool hit,bool damage)
                         }
                         if(!loaded)
                         {
+                            char bufBckChar[99];
+                            bufBckChar[0]=bufBck[j];
+                            strncat(bckPath,bufBckChar,max);
+                            strncat(bckPath,".bmp",max);
                             cerr<<mes<<"loading image at "<<bckPath<<endl;
-                            Anim a(bckPath);
-                            imgListBack.add(a);
+                            Anim an(bckPath);//bug here
+                            getchar();
+                            an.printImage(app,50,50);
+                            imgListBack.add(an);
                         }
                     }
                 }
